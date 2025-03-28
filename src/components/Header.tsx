@@ -29,7 +29,7 @@ export default function Header({ currentPage, onPageChange, isLoggedIn, onLogout
             onClick={() => onPageChange('home')}
           >
             <BookOpen className="h-8 w-8 text-indigo-600" />
-            <h1 className="text-2xl font-bold text-gray-900">Library Web</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Library-Web</h1>
           </div>
           {/* 네비게이션 메뉴 */}
           <nav className="flex items-center space-x-6">
