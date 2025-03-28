@@ -5,7 +5,7 @@
  */
 
 import React from 'react';
-import { PenLine } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 // Header 컴포넌트의 props 타입 정의
@@ -28,8 +28,8 @@ export default function Header({ currentPage, onPageChange, isLoggedIn, onLogout
             className="flex items-center space-x-3 cursor-pointer"
             onClick={() => onPageChange('home')}
           >
-            <PenLine className="h-8 w-8 text-indigo-600" />
-            <h1 className="text-2xl font-bold text-gray-900">개발 이야기</h1>
+            <BookOpen className="h-8 w-8 text-indigo-600" />
+            <h1 className="text-2xl font-bold text-gray-900">Library Web</h1>
           </div>
           {/* 네비게이션 메뉴 */}
           <nav className="flex items-center space-x-6">

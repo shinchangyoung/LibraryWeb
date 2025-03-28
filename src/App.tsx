@@ -17,6 +17,8 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
 
   const handleLogin = (email: string, password: string) => {
     // 실제 로그인 로직은 여기에 구현
