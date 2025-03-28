@@ -5,16 +5,20 @@
  */
 
 import React from 'react';
-
 import { PenLine } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 // Header 컴포넌트의 props 타입 정의
 interface HeaderProps {
   currentPage: string;    // 현재 활성화된 페이지
   onPageChange: (page: string) => void;  // 페이지 변경 시 호출되는 콜백 함수
+  isLoggedIn: boolean;
+  onLogout: () => void;
 }
 
-export default function Header({ currentPage, onPageChange }: HeaderProps) {
+export default function Header({ currentPage, onPageChange, isLoggedIn, onLogout }: HeaderProps) {
+  const navigate = useNavigate();
+
   return (
     <header className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -28,7 +32,7 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
             <h1 className="text-2xl font-bold text-gray-900">개발 이야기</h1>
           </div>
           {/* 네비게이션 메뉴 */}
-          <nav className="flex space-x-6">
+          <nav className="flex items-center space-x-6">
             <button 
               onClick={() => onPageChange('home')}
               className={`${currentPage === 'home' ? 'text-indigo-600' : 'text-gray-600'} hover:text-indigo-600`}
@@ -47,6 +51,24 @@ export default function Header({ currentPage, onPageChange }: HeaderProps) {
             >
               소개
             </button>
+            {isLoggedIn ? (
+              <div className="flex items-center space-x-4">
+                <span className="text-gray-600">환영합니다!</span>
+                <button
+                  onClick={onLogout}
+                  className="text-sm text-white bg-indigo-600 px-4 py-2 rounded-md hover:bg-indigo-700"
+                >
+                  로그아웃
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => navigate('/login')}
+                className="text-sm text-white bg-indigo-600 px-4 py-2 rounded-md hover:bg-indigo-700"
+              >
+                로그인
+              </button>
+            )}
           </nav>
         </div>
       </div>
