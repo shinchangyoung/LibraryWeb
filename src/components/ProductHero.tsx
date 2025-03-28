@@ -19,10 +19,12 @@ export default function ProductHero() {
         className="absolute inset-0"
       >
         <img
-          src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80"
           alt="Hero"
           className="w-full h-full object-cover opacity-70"
         />
+        {/* 어두운 그라데이션 오버레이 */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40" />
       </motion.div>
 
       {/* 메인 콘텐츠 */}
