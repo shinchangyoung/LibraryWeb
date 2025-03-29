@@ -26,10 +26,10 @@ export default function Header({ currentPage, onPageChange, isLoggedIn, onLogout
           {/* 로고 섹션 */}
           <div 
             className="flex items-center space-x-3 cursor-pointer"
-            onClick={() => onPageChange('home')}
+            onClick={() => navigate('/')}
           >
             <BookOpen className="h-8 w-8 text-indigo-600" />
-            <h1 className="text-2xl font-bold text-gray-900">Library-Web</h1>
+            <h1 className="text-2xl font-bold text-gray-900 hover:text-indigo-600 transition-colors duration-200">LibraryWeb</h1>
           </div>
           {/* 네비게이션 메뉴 */}
           <nav className="flex items-center space-x-6">
